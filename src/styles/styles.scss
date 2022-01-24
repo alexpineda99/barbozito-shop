@@ -1,0 +1,128 @@
+@use './config/settings.scss';
+@use './base/base.scss';
+
+
+// Paleta de colores 
+$bgcolor: #f3dbc3;
+$footercolor: #f89e9c;
+//Otros colores
+$opcional1: #e8c39e;
+$opcional2: #eaccad;
+$opcional3: #f7bfbe;
+
+//Font
+
+$font: "paris";
+
+@font-face {
+    font-family: $font;
+    src: url("../fonts/Parisienne-Regular.ttf");
+    // font-size: 28px;
+}
+
+
+// html {
+
+// }
+
+body {
+    // min-height: 100vh;
+    // display: flex;
+    // flex-direction: column;
+    background-color: $bgcolor;
+    font-family: $font;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.nav-container {
+    font-family: $font !important;
+    
+}
+
+.nav-links {
+    font-size: 17px !important;
+    font-weight: 900;
+}
+
+.nav-brand {
+    font-size:30px !important;
+    font-weight: 700 !important;
+}
+
+.nav-hamburguer-icon:hover {
+    color: #fff !important;
+    transition: ease-in-out .2s;
+}
+
+.overlay-container-show {
+
+    background-color: $footercolor !important;
+
+}
+
+.overlay-container-hidden{
+
+    background-color: $footercolor !important;
+
+}
+
+.seperator {
+    height: 20px;
+    background-color: $bgcolor;
+    border-top-left-radius: 4000px 150px;
+    border-top-right-radius: 4000px 150px;
+    top: -17px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.search {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+._yoqu0 ._1z8bk {
+    background-color: transparent !important;
+    width: 50% !important;
+}
+
+.select-category > ._yoqu0{
+    width: 40% !important;
+}
+
+._2eBPT {
+    width: 40% !important;
+}
+
+._2eBPT ._7avJu ~ ._2f4YC {
+    color: #000 !important;
+}
+
+.search-bar, .select-category {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+
+.content-wrap {
+    flex: 1;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    align-items: center;
+    background-color: $footercolor;
+    padding: .5em;
+    font-size: 20px;
+    position: relative;
+    bottom: 0;
+}
