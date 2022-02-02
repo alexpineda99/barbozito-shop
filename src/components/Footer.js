@@ -11,9 +11,9 @@ function Footer() {
     return (
       <div className="main-footer">
         <div className="footer-container">
-          <div className="footer-row-left"> <p>&copy;2022</p> <p> Andres Barboza </p> <p> All Rights Reserved </p> </div>
-          <div className="footer-row-center"> <p> Miami, Florida </p><p>  4652 Rinehart Road </p><p> 305-389-1999</p> </div>
-          <div className="footer-row-right"> <p> {Fb} {Tw} {Ig} </p> </div>
+          <div className="footer-row-left"> <div>&copy;2022</div> <div> Andres Barboza </div> <div> All Rights Reserved </div> </div>
+          <div className="footer-row-center"> <div> Miami, Florida </div><div>  4652 Rinehart Road </div><div> 305-389-1999</div> </div>
+          <div className="footer-row-right"> <div> {Fb} {Tw} {Ig} </div> </div>
         </div>
       </div>
     );

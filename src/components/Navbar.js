@@ -1,14 +1,14 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Navbar } from 'react-responsive-navbar-overlay';
 import Home from "./Home";
 function Nav() {
   return (
     <div>
-        <Navbar fontColor="#000" backgroundColor="#f89e9c" brand={"Barboza´s Shop"}
+        <Navbar fontColor="#fff" backgroundColor="#1f2021" brand={<Link to='/'>Barboza´s Shop</Link>}
         links={[
-        {text: "Register", link: "register"},
-        {text: "Log in", link: "login"}]} />
+        {text: "Sign Up", link: "/signup"},
+        {text: "Sign In", link: "/signin"}]} />
         <div class="seperator"></div>
     </div>
   )
