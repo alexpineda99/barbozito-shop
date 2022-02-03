@@ -16,7 +16,7 @@ $font: "farray";
 
 @font-face {
     font-family: $font;
-    src: url("../fonts/FARRAY.otf");
+    src: url("../Assets/fonts/FARRAY.otf");
     // font-size: 28px;
 }
 
@@ -123,13 +123,25 @@ body {
     margin-top: 3%;
 }
 
-.div-login-form {
+.div-login-form, .div-signup-form {
     display: flex;
     flex-direction: column;
     width: 100%;
     justify-content: center;
     align-items: center;
-    margin-top: 2.5%;
+    margin-top: 2%;
+}
+
+.div-signup-form > .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+    width: 15% !important;
+}
+
+.div-signup-form > .button-shop, .button-shop::before {
+    margin-top: 2%;
+}
+
+.div-signup-form > .button-shop::before {
+    content: "Sign Up";
 }
 
 ._2eBPT {
@@ -201,7 +213,7 @@ body {
 }
 
 .css-1nrlq1o-MuiFormControl-root {
-    width: 50% !important;
+    width: 30% !important;
 }
 
 .neon-input-efect {
@@ -237,9 +249,22 @@ body {
         font-weight: 900;
     }
 
+    .div-signup-form > .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+        width: 30% !important;
+    }
+
 }
 
 @media screen and (max-width: 425px) {
+
+    .div-signup-form > .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+        width: 60% !important;
+    }
+
+    
+    .css-1nrlq1o-MuiFormControl-root {
+        width: 60% !important;
+    }
 
     .footer-row-left, .footer-row-right, .footer-row-center {
         display: flex;
