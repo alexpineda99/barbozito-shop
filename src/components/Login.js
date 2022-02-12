@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import Nav from "./Navbar";
 import Footer from "./Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useForm, Controller } from "react-hook-form";
 import { faEye,faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { useForm, Controller } from "react-hook-form";
 import  TextField from '@mui/material/TextField';
 
 function Login() {

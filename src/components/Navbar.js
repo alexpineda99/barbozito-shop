@@ -1,7 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Navbar } from 'react-responsive-navbar-overlay';
-import Home from "./Home";
+import img from "../Assets/img/photo1644162358-modified.jpeg";
+
+const styles= {
+  seperator: {
+    backgroundImage: `url(${img})`
+  },
+};
+
 function Nav() {
   return (
     <div>
@@ -9,7 +16,7 @@ function Nav() {
         links={[
         {text: "Sign Up", link: "/signup"},
         {text: "Sign In", link: "/signin"}]} />
-        <div class="seperator"></div>
+        <div class="seperator" style={window?.location.pathname === '/' ? styles.seperator : null}></div>
     </div>
   )
 }

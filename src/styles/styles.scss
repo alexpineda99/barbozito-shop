@@ -41,8 +41,55 @@ body {
 .page-container {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 150vh;
 }
+
+// .separator  {
+//     height: 20px;
+//     background-color: $bgcolor;
+//     border-top-left-radius: 4000px 150px;
+//     border-top-right-radius: 4000px 150px;
+//     top: -17px;
+//     width: 100%;
+//     position: relative;
+//     // z-index: 1;
+// }
+
+
+.seperator{
+    height: 20px;
+    background-color: $bgcolor;
+    border-top-left-radius: 4000px 150px;
+    border-top-right-radius: 4000px 150px;
+    top: -17px;
+    // width: 100%;
+    position: relative;
+    // z-index: 1;
+    // background-image: url("../Assets/img/photo1644162358-modified.jpeg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+}
+
+.parallax {
+    /* The image used */
+    background-image: url("../Assets/img/photo1644162358-modified.jpeg");
+  
+    /* Set a specific height */
+    // min-height: 5px;
+  height: 100%;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    // z-index: 5;
+    /* Body */
+    background-position: 0 0px;
+
+  }
 
 .content-wrap {
     flex: 1;
@@ -92,17 +139,6 @@ body {
 
 }
 
-.seperator {
-    height: 20px;
-    background-color: $bgcolor;
-    border-top-left-radius: 4000px 150px;
-    border-top-right-radius: 4000px 150px;
-    top: -17px;
-    width: 100%;
-    position: relative;
-    // z-index: 1;
-}
-
 .search {
     display: flex;
     flex-direction: row;
@@ -116,11 +152,15 @@ body {
     width: 50%;
 }
 
-.login-form {
+.login-form, .register-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-top: 3%;
+}
+
+.div-signup-form > .register-form {
+    width: 15%;
 }
 
 .div-login-form, .div-signup-form {
@@ -129,7 +169,14 @@ body {
     width: 100%;
     justify-content: center;
     align-items: center;
-    margin-top: 2%;
+}
+
+.div-signup-form > .MuiFormControl-root .MuiTextField-root .css-1u3bzj6-MuiFormControl-root-MuiTextField-root, .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+    width: 100%;
+}
+
+.register-form > .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+    width: 100%;
 }
 
 .div-signup-form > .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
@@ -148,6 +195,10 @@ body {
     width: 100% !important;
 }
 
+.nav-hamburguer-icon {
+    font-size: 30px !important;
+}
+
 .icon-eye {
     display: flex;
     justify-content: flex-end;
@@ -157,7 +208,7 @@ body {
 
 .icon {
     position: absolute;
-    padding-top: 10px;
+    margin-bottom: 5px;
     cursor: pointer;
     z-index: 999;
 
@@ -253,6 +304,15 @@ body {
         width: 30% !important;
     }
 
+    .css-1nrlq1o-MuiFormControl-root {
+        width: 50% !important;
+    }
+
+    .register-form {
+        width: 30% !important;
+        margin-bottom: 5%;
+    }
+
 }
 
 @media screen and (max-width: 425px) {
@@ -264,6 +324,11 @@ body {
     
     .css-1nrlq1o-MuiFormControl-root {
         width: 60% !important;
+    }
+
+    .register-form {
+        width: 80% !important;
+        margin-bottom: 5%;
     }
 
     .footer-row-left, .footer-row-right, .footer-row-center {
