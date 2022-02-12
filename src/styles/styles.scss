@@ -21,14 +21,19 @@ $font: "farray";
 }
 
 //Esconde la barra vertical
-*{
-    -ms-overflow-style: none;
-}
-::-webkit-scrollbar {
-    display: none;
-}
+// *{
+//     overflow-y: overlay;
+     
+// }
+// *{
+//     -ms-overflow-style: none;
+// }
+// ::-webkit-scrollbar {
+//     display: none;
+// }
 
-html {}
+html {
+}
 
 body {
     // min-height: 100vh;
