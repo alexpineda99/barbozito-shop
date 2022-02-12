@@ -21,12 +21,12 @@ $font: "farray";
 }
 
 //Esconde la barra vertical
-// *{
-//     -ms-overflow-style: none;
-// }
-// ::-webkit-scrollbar {
-//     display: none;
-// }
+*{
+    -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+    display: none;
+}
 
 html {}
 
@@ -41,6 +41,10 @@ body {
 .page-container {
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+}
+
+.home-container {
     min-height: 150vh;
 }
 
@@ -87,7 +91,7 @@ body {
     background-size: cover;
     // z-index: 5;
     /* Body */
-    background-position: 0 0px;
+    background-position: 0 0;
 
   }
 
@@ -288,6 +292,14 @@ body {
     flex-direction: column;
 }
 
+@media screen and (max-width: 1024px) {
+
+    .nav-links {
+        font-size: 14px !important;
+    }
+
+}
+
 @media screen and (max-width: 768px) {
 
     .nav-brand {
@@ -296,7 +308,7 @@ body {
     }
 
     .nav-links {
-        font-size: 12px !important;
+        font-size: 10px !important;
         font-weight: 900;
     }
 
@@ -313,9 +325,18 @@ body {
         margin-bottom: 5%;
     }
 
+
 }
 
 @media screen and (max-width: 425px) {
+
+    .seperator {
+        background-position: -100px 0px;
+    }
+
+    .parallax {
+        background-position: -100px 0px;
+    }
 
     .div-signup-form > .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
         width: 60% !important;
@@ -346,8 +367,25 @@ body {
 
 @media screen and (max-width: 375px) {
 
+    .seperator {
+        background-position: -120px 0px;
+    }
+
+    .parallax {
+        background-position: -120px 0px;
+    }
+
+
 }
 
 @media screen and (max-width: 320px) {
+
+    .seperator {
+        background-position: -140px 0px;
+    }
+
+    .parallax {
+        background-position: -140px 0px;
+    }
 
 }

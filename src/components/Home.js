@@ -26,7 +26,7 @@ function Home() {
   };
 
   return (
-    <div className="page-container">
+    <div className="page-container home-container">
       <div className="content-wrap parallax">
         <Nav />
         <div className="search">

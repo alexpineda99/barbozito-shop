@@ -14,6 +14,7 @@ function Nav() {
     <div>
         <Navbar fontColor="#fff" backgroundColor="#1f2021" brand={<Link to='/'>Barboza´s Shop</Link>}
         links={[
+        {text: "Home", link: "/"},
         {text: "Sign Up", link: "/signup"},
         {text: "Sign In", link: "/signin"}]} />
         <div class="seperator" style={window?.location.pathname === '/' ? styles.seperator : null}></div>
