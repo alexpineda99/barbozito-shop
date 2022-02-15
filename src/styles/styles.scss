@@ -382,7 +382,7 @@ nav {
 @media screen and (max-width: 768px) {
 
     .parallax {
-        background-size: unset;
+        background-size: inherit;
     }
 
     .nav-brand {
