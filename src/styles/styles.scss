@@ -381,6 +381,10 @@ nav {
 
 @media screen and (max-width: 768px) {
 
+    .parallax {
+        background-size: 0;
+    }
+
     .nav-brand {
         font-size: 25px !important;
         font-weight: 700 !important;
@@ -406,15 +410,6 @@ nav {
 
 }
 
-@media screen and (max-width: 1020px) {
-    .seperator {
-        background-position: -100px 0px;
-    }
-
-    .parallax {
-        background-position: -100px 0px;
-    }
-}
 
 @media screen and (max-width: 425px) {
 
