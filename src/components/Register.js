@@ -44,20 +44,21 @@ function Register() {
         <h1 className="title">Sign Up</h1>
         <div className="div-signup-form">
           <form className="register-form" onSubmit={handleSubmit(onSubmit)}>
-            <TextField id="standard-basic" label="Name" variant="standard" {...register("nombre")} />
-            <TextField id="standard-basic" label="Lastname(s)" variant="standard" {...register("apellidos")} />
+            <TextField id="standard-basic" label="Name" variant="standard" {...register("name")} />
+            <TextField id="standard-basic" label="Lastname(s)" variant="standard" {...register("lastnames")} />
             <TextField
               id="standard-select-categories"
               select
               label="Select Country"
-              value={country}
+              // value="j balvin"
               onChange={handleChange}
               variant="standard"
-              {...register("pais")}
+              {...register("country")}
             >
               {Countries_Flags.map((option, index) => (
                 <MenuItem key={option.index} value={option.name}>
-                  {option.name} {<img src={option.image} width="5%" height="5%" />}
+                  {option.name} 
+                  {<img src={option.image} className="select-country-items" />}
                 </MenuItem>
               ))}
             </TextField>
