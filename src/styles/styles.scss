@@ -62,7 +62,7 @@ body {
   
   /* Track */
   ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: transparent;
     border-radius: 10px;
   }
    
@@ -169,10 +169,14 @@ nav {
     align-items: flex-start;
 }
 
-.nav-brand>a:visited {
-
-    // text-decoration-color: #000;
-
+.img-logo-navbar {
+    height: 75px;
+    width: 100px;
+    filter: brightness(0) invert(1);
+    position: absolute;
+    top: -2%;
+    left: 12%;
+    transform: rotate(15deg);
 }
 
 .nav-hamburguer-icon:hover {
@@ -222,6 +226,12 @@ nav {
     width: 100%;
     justify-content: center;
     align-items: center;
+    // para centrar
+    // position: fixed;
+    // top: 32%;
+    // left: 50%;
+    // margin-top: -50px;
+    // margin-left: -100px;
 }
 
 .css-i44wyl {
@@ -378,6 +388,10 @@ nav {
         font-size: 14px !important;
     }
 
+    .img-logo-navbar {
+        left: 15%;
+    }
+
 }
 
 @media screen and (max-width: 768px) {
@@ -391,6 +405,10 @@ nav {
     .nav-links {
         font-size: 10px !important;
         font-weight: 900;
+    }
+
+    .img-logo-navbar {
+        left: 20%;
     }
 
     .div-signup-form > .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
@@ -429,6 +447,10 @@ nav {
     //     background-position: -100px 0px;
     // }
 
+    .img-logo-navbar {
+        left: 37%;
+    }
+
     .css-13sljp9 {
         width: 60%;
     }
@@ -459,6 +481,46 @@ nav {
     }
 }
 
+@media screen and (max-width: 912px) {
+
+
+    .img-logo-navbar {
+        top: -1%;
+        left: 18%;
+    }
+
+}
+
+@media screen and (max-width: 540px) {
+
+
+    .img-logo-navbar {
+        top: -1%;
+        left: 28%;
+    }
+
+}
+
+@media screen and (max-width: 414px) {
+
+
+    .img-logo-navbar {
+        top: -1%;
+        left: 38%;
+    }
+
+}
+
+@media screen and (max-width: 412px) {
+
+
+    .img-logo-navbar {
+        top: -1%;
+        left: 38%;
+    }
+
+}
+
 @media screen and (max-width: 375px) {
 
     .seperator {
@@ -467,6 +529,10 @@ nav {
 
     .parallax {
         background-position: -120px 0px;
+    }
+
+    .img-logo-navbar {
+        left: 40%;
     }
 
 
@@ -480,6 +546,10 @@ nav {
 
     .parallax {
         background-position: -140px 0px;
+    }
+
+    .img-logo-navbar {
+        left: 50%;
     }
 
 }
