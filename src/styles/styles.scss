@@ -145,7 +145,7 @@ nav {
 
 .nav-container {
     font-family: $font !important;
-    height: 60px;
+    height: 62px;
 
 }
 
@@ -174,9 +174,9 @@ nav {
     width: 100px;
     filter: brightness(0) invert(1);
     position: absolute;
-    top: -2%;
+    top: -1.5%;
     left: 12%;
-    transform: rotate(15deg);
+    transform: rotate(23deg);
 }
 
 .nav-hamburguer-icon:hover {
@@ -394,6 +394,16 @@ nav {
 
 }
 
+@media screen and (max-width: 912px) {
+
+
+    .img-logo-navbar {
+        top: -1%;
+        left: 18%;
+    }
+
+}
+
 @media screen and (max-width: 768px) {
 
 
@@ -408,6 +418,7 @@ nav {
     }
 
     .img-logo-navbar {
+        top: -2%;
         left: 20%;
     }
 
@@ -436,6 +447,25 @@ nav {
 
 }
 
+@media screen and (max-width: 684px) {
+
+
+    .img-logo-navbar {
+        left: 23%;
+    }
+
+}
+
+@media screen and (max-width: 540px) {
+
+
+    .img-logo-navbar {
+        top: -1%;
+        left: 28%;
+    }
+
+}
+
 
 @media screen and (max-width: 425px) {
 
@@ -448,6 +478,7 @@ nav {
     // }
 
     .img-logo-navbar {
+        top: -2%;
         left: 37%;
     }
 
@@ -481,26 +512,6 @@ nav {
     }
 }
 
-@media screen and (max-width: 912px) {
-
-
-    .img-logo-navbar {
-        top: -1%;
-        left: 18%;
-    }
-
-}
-
-@media screen and (max-width: 540px) {
-
-
-    .img-logo-navbar {
-        top: -1%;
-        left: 28%;
-    }
-
-}
-
 @media screen and (max-width: 414px) {
 
 
@@ -521,6 +532,7 @@ nav {
 
 }
 
+
 @media screen and (max-width: 375px) {
 
     .seperator {
@@ -532,6 +544,7 @@ nav {
     }
 
     .img-logo-navbar {
+        top: -2%;
         left: 40%;
     }
 
@@ -549,7 +562,7 @@ nav {
     }
 
     .img-logo-navbar {
-        left: 50%;
+        left: 48%;
     }
 
 }
