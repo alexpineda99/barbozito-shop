@@ -99,7 +99,7 @@ body {
 
 
 .seperator{
-    height: 20px;
+    height: 25px;
     background-color: $bgcolor;
     border-top-left-radius: 4000px 150px;
     border-top-right-radius: 4000px 150px;
@@ -166,16 +166,16 @@ nav {
     color: #fff;
     font-size: 24px;
     height: 100%;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .img-logo-navbar {
-    height: 75px;
-    width: 100px;
+    height: 45px;
+    width: 90px;
     filter: brightness(0) invert(1);
-    position: absolute;
-    top: -1.5%;
-    left: 12%;
+    // position: absolute;
+    // top: -1.5%;
+    // left: 12%;
     transform: rotate(23deg);
 }
 
@@ -389,18 +389,22 @@ nav {
     }
 
     .img-logo-navbar {
-        left: 15%;
+        width: 70px;
     }
+
+    // .img-logo-navbar {
+    //     left: 15%;
+    // }
 
 }
 
 @media screen and (max-width: 912px) {
 
 
-    .img-logo-navbar {
-        top: -1%;
-        left: 18%;
-    }
+    // .img-logo-navbar {
+    //     top: -1%;
+    //     left: 18%;
+    // }
 
 }
 
@@ -418,9 +422,13 @@ nav {
     }
 
     .img-logo-navbar {
-        top: -2%;
-        left: 20%;
+        width: 60px;
     }
+
+    // .img-logo-navbar {
+    //     top: -2%;
+    //     left: 20%;
+    // }
 
     .div-signup-form > .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
         width: 30% !important;
@@ -450,19 +458,19 @@ nav {
 @media screen and (max-width: 684px) {
 
 
-    .img-logo-navbar {
-        left: 23%;
-    }
+    // .img-logo-navbar {
+    //     left: 23%;
+    // }
 
 }
 
 @media screen and (max-width: 540px) {
 
 
-    .img-logo-navbar {
-        top: -1%;
-        left: 28%;
-    }
+    // .img-logo-navbar {
+    //     top: -1%;
+    //     left: 28%;
+    // }
 
 }
 
@@ -477,9 +485,13 @@ nav {
     //     background-position: -100px 0px;
     // }
 
+    // .img-logo-navbar {
+    //     top: -2%;
+    //     left: 37%;
+    // }
+
     .img-logo-navbar {
-        top: -2%;
-        left: 37%;
+        width: 50px;
     }
 
     .css-13sljp9 {
@@ -515,20 +527,20 @@ nav {
 @media screen and (max-width: 414px) {
 
 
-    .img-logo-navbar {
-        top: -1%;
-        left: 38%;
-    }
+    // .img-logo-navbar {
+    //     top: -1%;
+    //     left: 38%;
+    // }
 
 }
 
 @media screen and (max-width: 412px) {
 
 
-    .img-logo-navbar {
-        top: -1%;
-        left: 38%;
-    }
+    // .img-logo-navbar {
+    //     top: -1%;
+    //     left: 38%;
+    // }
 
 }
 
@@ -543,10 +555,10 @@ nav {
         background-position: -120px 0px;
     }
 
-    .img-logo-navbar {
-        top: -2%;
-        left: 40%;
-    }
+    // .img-logo-navbar {
+    //     top: -2%;
+    //     left: 40%;
+    // }
 
 
 }
@@ -561,8 +573,8 @@ nav {
         background-position: -140px 0px;
     }
 
-    .img-logo-navbar {
-        left: 48%;
-    }
+    // .img-logo-navbar {
+    //     left: 48%;
+    // }
 
 }
