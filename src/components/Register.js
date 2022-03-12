@@ -11,7 +11,7 @@ import Countries_Flags from "../Assets/files json/countries_flags";
 
 function Register() {
 
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm();
   const [country, SetCountry] = useState("");
   const [passwordShown, setPasswordShown] = useState(false);
   const [passwordConfirmShown, setPasswordConfirmShown] = useState(false);
@@ -44,8 +44,19 @@ function Register() {
         <h1 className="title">Sign Up</h1>
         <div className="div-signup-form">
           <form className="register-form" onSubmit={handleSubmit(onSubmit)}>
-            <TextField id="standard-basic" label="Name" variant="standard" {...register("name")} />
-            <TextField id="standard-basic" label="Lastname(s)" variant="standard" {...register("lastnames")} />
+            <TextField id="standard-basic" 
+            name="name"
+            className={errors.name ? "warning-input-style warning-color-style" : null}
+            label="Name" 
+            variant="standard" {...register("name", {required: "This field is required", minLength: {value: 3, message:"Name field must be at least 3 characters"} })} 
+            />
+            {errors.name && <span className="form-warning-msg"> {errors.name.message} </span>}
+            <TextField id="standard-basic" 
+            name="lastname" 
+            className={errors.lastnames ? "warning-input-style warning-color-style" : null} 
+            label="Lastname(s)" 
+            variant="standard" {...register("lastnames", {required: "This field is required", minLength: {value: 2, message:"Lastname field must be at least 2 characters"} })} />
+            {errors.lastnames && <span className="form-warning-msg"> {errors.lastnames.message} </span>}
             <TextField
               id="standard-select-categories"
               select
