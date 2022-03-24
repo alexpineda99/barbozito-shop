@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import { useState, useEffect  } from 'react';
 import ReactDOM from 'react-dom';
 import Nav from "./Navbar";
 import Footer from "./Footer";
+import axios from "axios";
 import { useForm, Controller } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
@@ -13,6 +14,7 @@ function Register() {
 
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [country, SetCountry] = useState("");
+  const [countriesList, SetCountriesList] = useState("");
   const [passwordShown, setPasswordShown] = useState(false);
   const [passwordConfirmShown, setPasswordConfirmShown] = useState(false);
   const eye = <FontAwesomeIcon icon={faEye} />
@@ -22,7 +24,14 @@ function Register() {
     SetCountry(event.target.value);
   };
   const onSubmit = (data) => {
-    console.log(data)
+    console.log(data);
+    // axios.post("http://localhost:3001/registeruser", data)
+    // .then(res => {
+    //   console.log('respuesta servidor', res)
+    // })
+    // .catch(error => {
+    //   console.log(error)
+    // })
   }
   const togglePasswordVisiblity = () => {
     setPasswordShown(passwordShown ? false : true);
@@ -30,6 +39,12 @@ function Register() {
   const togglePasswordConfirmVisiblity = () => {
     setPasswordConfirmShown(passwordConfirmShown ? false : true);
   };
+
+  useEffect(() => {
+
+  }, [])
+
+  
 
   // {Countries_Flags.map((data) => 
 
@@ -48,32 +63,46 @@ function Register() {
             name="name"
             className={errors.name ? "warning-input-style warning-color-style" : null}
             label="Name" 
-            variant="standard" {...register("name", {required: "This field is required", minLength: {value: 3, message:"Name field must be at least 3 characters"} })} 
-            />
+            variant="standard" {...register("name", {required: "This field is required",
+            minLength: {value: 3, message:"Name field must be at least 3 characters and not more than 30 characters"},
+            maxLength: {value: 30, message:"Name field must be at least 3 characters and not more than 30 characters"},
+            pattern:{value: /^[a-zA-Z\s]*$/, message:"Only alphabetic characters are allowed for this field"}
+          })}/>
             {errors.name && <span className="form-warning-msg"> {errors.name.message} </span>}
             <TextField id="standard-basic" 
             name="lastname" 
             className={errors.lastnames ? "warning-input-style warning-color-style" : null} 
             label="Lastname(s)" 
-            variant="standard" {...register("lastnames", {required: "This field is required", minLength: {value: 2, message:"Lastname field must be at least 2 characters"} })} />
+            variant="standard" {...register("lastnames", {required: "This field is required", 
+            minLength: {value: 2, message:"Lastname field must be at least 2 characters and not more than 30 characters"},
+            maxLength: {value: 30, message: "Lastname field must be at least 2 characters and not more than 30 characters"},
+            pattern:{value: /^[a-zA-Z\s]*$/, message:"Only alphabetic characters are allowed for this field"}
+            })} />
+
             {errors.lastnames && <span className="form-warning-msg"> {errors.lastnames.message} </span>}
             <TextField
               id="standard-select-categories"
+              className={errors.country ? "warning-input-style warning-color-style" : null}
               select
               label="Select Country"
               // value="j balvin"
               onChange={handleChange}
               variant="standard"
-              {...register("country")}
+              {...register("country", {required: "This field is required"})}
             >
               {Countries_Flags.map((option, index) => (
-                <MenuItem key={option.index} value={option.name}>
-                  {option.name} 
-                  {<img src={option.image} className="select-country-items" />}
+                <MenuItem key={index} value={option.value}>
+                  {<img src={"https://img.mobiscroll.com/demos/flags/"+ option.value+".png"} className="select-country-items" />}
+                  {option.text} 
                 </MenuItem>
               ))}
             </TextField>
-            <TextField id="standard-basic" label="Email" variant="standard" {...register("email")} />
+            {errors.country && <span className="form-warning-msg"> {errors.country.message} </span>}
+            <TextField id="standard-basic" label="Email" variant="standard" className={errors.email ? "warning-input-style warning-color-style" : null}
+            {...register("email", {required: "This field is required",
+            pattern: {value: /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i, message: "Invalid email address"}
+          })} />
+          {errors.email && <span className="form-warning-msg"> {errors.email.message} </span>}
             <div className="input-password">
               <TextField id="standard-basic" type={!passwordShown ? "password" : "text"} label="Password" variant="standard" {...register("password")} />
               <div className="icon-eye">
