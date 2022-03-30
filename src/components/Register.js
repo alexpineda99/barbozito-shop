@@ -15,8 +15,7 @@ import "react-phone-number-input/style.css";
 function Register() {
 
   const { register, handleSubmit, watch, formState: { errors } } = useForm({
-    mode: "onChange",
-    reValidateMode: "onChange"
+    mode: "all"
   });
   const [country, SetCountry] = useState("");
   const [countriesList, SetCountriesList] = useState("");
@@ -113,11 +112,12 @@ function Register() {
                 pattern: { value: /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i, message: "Invalid email address" }
               })} />
             {errors.email && <span className="form-warning-msg"> {errors.email.message} </span>}
+            <div></div>
             <PhoneInput
               initialValueFormat="national"
               className={errors.phonenumber ? "warning-input-style warning-color-style" : null}
               placeholder="Enter phone number"
-              {...register("phonenumber", { required: "This field is required", pattern: {value: /^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$/g, message: "Invalid phone number" } })}
+              {...register("phonenumber", { required: "This field is required", pattern: {value: /(\+\d{1,3}\s?)?((\(\d{3}\)\s?)|(\d{3})(\s|-?))(\d{3}(\s|-?))(\d{4})(\s?(([E|e]xt[:|.|]?)|x|X)(\s?\d+))?/g, message: "Invalid phone number" } })}
             />
             {errors.phonenumber && <span className="form-warning-msg"> {errors.phonenumber.message} </span>}
             <div className="input-password">
@@ -128,7 +128,6 @@ function Register() {
                   required: "This field is required", minLength: { value: 8, message: passwordMessage }, maxLength: { value: 16, message: passwordMessage },
                   pattern: { value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,16})/gm, message: passwordMessage }
                 })}
-                // onChange
               />
               <div className="icon-eye">
                 <i onClick={togglePasswordVisiblity} className="icon"> {passwordShown ? eye : closeEye} </i>
