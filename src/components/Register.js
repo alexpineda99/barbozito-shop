@@ -14,8 +14,11 @@ import "react-phone-number-input/style.css";
 
 function Register() {
 
-  const { register, handleSubmit, watch, formState: { errors } } = useForm({
-    mode: "all"
+  const { register, handleSubmit, watch, control, formState: { errors } } = useForm({
+    mode: "onChange",
+    defaultValues: {
+      phone:""
+    }
   });
   const [country, SetCountry] = useState("");
   const [countriesList, SetCountriesList] = useState("");
@@ -112,14 +115,29 @@ function Register() {
                 pattern: { value: /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i, message: "Invalid email address" }
               })} />
             {errors.email && <span className="form-warning-msg"> {errors.email.message} </span>}
-            <div></div>
+            <div className={errors.phone ? "phoneinputdiverror" : "phoneinputdiv"}>
+            <Controller
+            name="phone"
+            control={control}
+            rules={{required: "This field is required", pattern: {value: /(\+\d{1,3}\s?)?((\(\d{3}\)\s?)|(\d{3})(\s|-?))(\d{3}(\s|-?))(\d{4})(\s?(([E|e]xt[:|.|]?)|x|X)(\s?\d+))?/g, message: "Invalid phone number" }}}
+            render={({field})=> 
             <PhoneInput
+            initialValueFormat="national"
+            className={errors.phone ? "warning-input-style" : null}
+            placeholder="Enter phone number"
+            {...field}
+          />
+          }
+            />
+            </div>
+            {errors.phone && <span className="form-warning-msg"> {errors.phone.message} </span>}
+            {/* <PhoneInput
               initialValueFormat="national"
               className={errors.phonenumber ? "warning-input-style warning-color-style" : null}
               placeholder="Enter phone number"
               {...register("phonenumber", { required: "This field is required", pattern: {value: /(\+\d{1,3}\s?)?((\(\d{3}\)\s?)|(\d{3})(\s|-?))(\d{3}(\s|-?))(\d{4})(\s?(([E|e]xt[:|.|]?)|x|X)(\s?\d+))?/g, message: "Invalid phone number" } })}
             />
-            {errors.phonenumber && <span className="form-warning-msg"> {errors.phonenumber.message} </span>}
+            {errors.phonenumber && <span className="form-warning-msg"> {errors.phonenumber.message} </span>} */}
             <div className="input-password">
               <TextField id="standard-basic" type={!passwordShown ? "password" : "text"}
                 className={errors.password ? "warning-input-style warning-color-style" : null}
