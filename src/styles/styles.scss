@@ -291,21 +291,6 @@ nav {
     font-size: .6em;
 }
 
-// .warning-input-style > .css-1480iag-MuiInputBase-root-MuiInput-root:before, 
-// .warning-input-style > .css-1480iag-MuiInputBase-root-MuiInput-root:after,
-// .warning-input-style > .css-1wt0ykv::before,
-// .warning-input-style > .css-1wt0ykv::after {
-//     border-bottom: 1px solid #B33A3A !important;
-// }
-// .warning-color-style > .css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root,
-// .warning-color-style > .css-1c2i806-MuiFormLabel-root-MuiInputLabel-root,
-// .warning-color-style > .css-1c2i806-MuiFormLabel-root-MuiInputLabel-root.Mui-focused,
-// .warning-color-style > .css-348fk2.Mui-focused,
-// .warning-color-style > .css-mqt2s5{
-//     color: #B33A3A;
-// }
-
-
 .password-validate-msg-main {
     text-align: center;
 }
@@ -343,14 +328,9 @@ nav {
     border-bottom: 1px solid rgba(0, 0, 0, 0.42);
 }
 
-.select-country-items {
+.select-country-items, .select-country-items-code {
     width: 10%;
     height: 10%;
-}
-
-.select-country-items-code {
-    height: 10%;
-    width: 30%;
 }
 
 .css-10nakn3-MuiModal-root-MuiPopover-root-MuiMenu-root {
