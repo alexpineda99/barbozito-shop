@@ -328,9 +328,14 @@ nav {
     border-bottom: 1px solid rgba(0, 0, 0, 0.42);
 }
 
-.select-country-items, .select-country-items-code {
+.select-country-items {
     width: 10%;
     height: 10%;
+}
+
+.select-country-items-code {
+    height: 10%;
+    width: 30%;
 }
 
 .css-10nakn3-MuiModal-root-MuiPopover-root-MuiMenu-root {
@@ -558,9 +563,18 @@ nav {
 
 @media screen and (max-width: 425px) {
 
-    .select-country-items-code{
-        width: 30%;
-    }
+    // .seperator {
+    //     background-position: -100px 0px;
+    // }
+
+    // .parallax {
+    //     background-position: -100px 0px;
+    // }
+
+    // .img-logo-navbar {
+    //     top: -2%;
+    //     left: 37%;
+    // }
 
     .img-logo-navbar {
         width: 50px;
