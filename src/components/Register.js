@@ -15,13 +15,14 @@ import "react-phone-number-input/style.css";
 function Register() {
 
   const { register, handleSubmit, watch, control, formState: { errors } } = useForm({
-    mode: "onChange",
-    defaultValues: {
-      phone:""
-    }
+    mode: "onChange"
   });
   const [country, SetCountry] = useState("");
   const [countriesList, SetCountriesList] = useState("");
+  // const [phonenumber, SetPhonenumber] = useState({
+  //   code: "",
+  //   number: ""
+  // });
   const [passwordShown, setPasswordShown] = useState(false);
   const [passwordConfirmShown, setPasswordConfirmShown] = useState(false);
   const password = watch("password");
@@ -39,6 +40,13 @@ function Register() {
   const handleChange = (event) => {
     SetCountry(event.target.value);
   };
+  // const handleChangeCode = (event) => {
+
+  //   SetPhonenumber({...phonenumber, code: event.target.value})
+  // };
+  // const handleChangePhone = (event) => {
+  //   SetPhonenumber({...phonenumber, number: event.target.value})
+  // };
 
   const onSubmit = (data) => {
     console.log(data);
@@ -70,7 +78,7 @@ function Register() {
           <form className="register-form" onSubmit={handleSubmit(onSubmit)}>
             <TextField id="standard-basic"
               name="name"
-              className={errors.name ? "warning-input-style warning-color-style" : null}
+              error={errors.name ? true : null}
               label="Name"
               variant="standard" {...register("name", {
                 required: "This field is required",
@@ -81,7 +89,7 @@ function Register() {
             {errors.name && <span className="form-warning-msg"> {errors.name.message} </span>}
             <TextField id="standard-basic"
               name="lastname"
-              className={errors.lastnames ? "warning-input-style warning-color-style" : null}
+              error={errors.lastnames ? true : null}
               label="Lastname(s)"
               variant="standard" {...register("lastnames", {
                 required: "This field is required",
@@ -93,7 +101,7 @@ function Register() {
             {errors.lastnames && <span className="form-warning-msg"> {errors.lastnames.message} </span>}
             <TextField
               id="standard-select-categories"
-              className={errors.country ? "warning-input-style warning-color-style" : null}
+              error={errors.country ? true : null}
               select
               label="Select Country"
               // value="j balvin"
@@ -102,45 +110,53 @@ function Register() {
               {...register("country", { required: "This field is required" })}
             >
               {Countries_Flags.map((option, index) => (
-                <MenuItem key={index} value={option.value}>
-                  {<img src={"https://img.mobiscroll.com/demos/flags/" + option.value + ".png"} className="select-country-items" />}
-                  {option.text}
+                <MenuItem key={index} value={option.name}>
+                  {<img src={option.flag} className="select-country-items" />}
+                  {option.name}
                 </MenuItem>
               ))}
             </TextField>
             {errors.country && <span className="form-warning-msg"> {errors.country.message} </span>}
-            <TextField id="standard-basic" label="Email" variant="standard" className={errors.email ? "warning-input-style warning-color-style" : null}
+            <TextField id="standard-basic" label="Email" variant="standard" error={errors.email ? true : null}
               {...register("email", {
                 required: "This field is required",
                 pattern: { value: /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i, message: "Invalid email address" }
               })} />
             {errors.email && <span className="form-warning-msg"> {errors.email.message} </span>}
-            <div className={errors.phone ? "phoneinputdiverror" : "phoneinputdiv"}>
-            <Controller
-            name="phone"
-            control={control}
-            rules={{required: "This field is required", pattern: {value: /(\+\d{1,3}\s?)?((\(\d{3}\)\s?)|(\d{3})(\s|-?))(\d{3}(\s|-?))(\d{4})(\s?(([E|e]xt[:|.|]?)|x|X)(\s?\d+))?/g, message: "Invalid phone number" }}}
-            render={({field})=> 
-            <PhoneInput
-            initialValueFormat="national"
-            className={errors.phone ? "warning-input-style" : null}
-            placeholder="Enter phone number"
-            {...field}
-          />
-          }
-            />
+
+            <div className="phone-div">
+              <TextField
+              // className={errors.phonecode ? "warning-input-style warning-color-style" : null}
+                error={errors.phonecode ? true : null}
+                id="select-code"
+                select
+                label="Country Code"
+                // helperText="Please select your country code"
+                {...register("phonecode", { required: "Country code field is required", pattern: { value: /^(\+?\d{1,4}|\d{1,4})$/gm, message: "Invalid country code" } })}
+                variant="standard"
+              >
+          
+                {Countries_Flags.map((option, index) => (
+                  <MenuItem key={index} value={option.dialCode}>
+                    {<img src={option.flag} className="select-country-items-code" />}
+                    {option.dialCode}
+                  </MenuItem>
+                ))}
+              </TextField>
+
+              <TextField
+              error={errors.phonenumber ? true : null}
+                id="standard"
+                label="Phone Number"
+                variant="standard"
+                {...register("phonenumber", { required: "Phone number field is required", pattern: {value: /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{3,6}$/gm, message: "Invalid phone number"} })}
+              />
             </div>
-            {errors.phone && <span className="form-warning-msg"> {errors.phone.message} </span>}
-            {/* <PhoneInput
-              initialValueFormat="national"
-              className={errors.phonenumber ? "warning-input-style warning-color-style" : null}
-              placeholder="Enter phone number"
-              {...register("phonenumber", { required: "This field is required", pattern: {value: /(\+\d{1,3}\s?)?((\(\d{3}\)\s?)|(\d{3})(\s|-?))(\d{3}(\s|-?))(\d{4})(\s?(([E|e]xt[:|.|]?)|x|X)(\s?\d+))?/g, message: "Invalid phone number" } })}
-            />
-            {errors.phonenumber && <span className="form-warning-msg"> {errors.phonenumber.message} </span>} */}
+            {errors.phonecode && <span className="form-warning-msg"> {errors.phonecode.message} </span> || errors.phonenumber && <span className="form-warning-msg"> {errors.phonenumber.message} </span>}
+
             <div className="input-password">
               <TextField id="standard-basic" type={!passwordShown ? "password" : "text"}
-                className={errors.password ? "warning-input-style warning-color-style" : null}
+                error={errors.password ? true : null}
                 label="Password" variant="standard"
                 {...register("password", {
                   required: "This field is required", minLength: { value: 8, message: passwordMessage }, maxLength: { value: 16, message: passwordMessage },
@@ -154,7 +170,7 @@ function Register() {
             {errors.password && <span className="form-warning-msg"> {errors.password.message} </span>}
             <div className="input-password">
               <TextField id="standard-basic" type={!passwordConfirmShown ? "password" : "text"}
-                className={errors.confirmPassword ? "warning-input-style warning-color-style" : null}
+                error={errors.confirmPassword ? true : null}
                 {...register("confirmPassword", { required: "This field is required", validate: (value) => value === password || "Confirm password must match with password field" })}
                 label="Confirm password" variant="standard" />
               <div className="icon-eye">
