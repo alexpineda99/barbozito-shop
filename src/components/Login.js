@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import Nav from "./Navbar";
 import Footer from "./Footer";
+import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye,faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { useForm, Controller } from "react-hook-form";
@@ -13,15 +14,20 @@ function Login() {
   const eye = <FontAwesomeIcon icon={faEye} />
   const closeEye = <FontAwesomeIcon icon={faEyeSlash} />
   const [passwordShown, setPasswordShown] = useState(false);
-  let [email, setEmail] = useState("");
-  let [password, setPassword] = useState("");
 
   const togglePasswordVisiblity = () => {
     setPasswordShown(passwordShown ? false : true);
   };
 
   const onSubmit = (data) => {
-    console.log(data)
+    console.log(data);
+    axios.post("http://localhost:3001/loguser", data)
+    .then(res => {
+      console.log('respuesta servidor', res)
+    })
+    .catch(error => {
+      console.log(error)
+    })
   }
 
   return (

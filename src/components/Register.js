@@ -1,16 +1,15 @@
 import { useState, useEffect } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import Nav from "./Navbar";
 import Footer from "./Footer";
 import axios from "axios";
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import TextField from '@mui/material/TextField';
-import PhoneInput from 'react-phone-number-input';
 import MenuItem from '@mui/material/MenuItem';
 import Countries_Flags from "../Assets/files json/countries_flags";
-import "react-phone-number-input/style.css";
 
 function Register() {
 
@@ -19,10 +18,6 @@ function Register() {
   });
   const [country, SetCountry] = useState("");
   const [countriesList, SetCountriesList] = useState("");
-  // const [phonenumber, SetPhonenumber] = useState({
-  //   code: "",
-  //   number: ""
-  // });
   const [passwordShown, setPasswordShown] = useState(false);
   const [passwordConfirmShown, setPasswordConfirmShown] = useState(false);
   const password = watch("password");
@@ -40,13 +35,6 @@ function Register() {
   const handleChange = (event) => {
     SetCountry(event.target.value);
   };
-  // const handleChangeCode = (event) => {
-
-  //   SetPhonenumber({...phonenumber, code: event.target.value})
-  // };
-  // const handleChangePhone = (event) => {
-  //   SetPhonenumber({...phonenumber, number: event.target.value})
-  // };
 
   const onSubmit = (data) => {
     console.log(data);
