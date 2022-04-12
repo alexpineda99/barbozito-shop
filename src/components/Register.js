@@ -7,6 +7,9 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from "react-router-dom";
+import { css } from "@emotion/react";
+import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import Countries_Flags from "../Assets/files json/countries_flags";
@@ -18,9 +21,12 @@ function Register() {
   });
   const [country, SetCountry] = useState("");
   const [countriesList, SetCountriesList] = useState("");
+  let [msg, setMsg] = useState(null);
+  let [isLoading, setisLoading] = useState(false);
   const [passwordShown, setPasswordShown] = useState(false);
   const [passwordConfirmShown, setPasswordConfirmShown] = useState(false);
   const password = watch("password");
+  const navigate = useNavigate();
   const passwordMessage =
     <div>
       <p className="password-validate-msg-main"> Password must have: </p>
@@ -32,19 +38,42 @@ function Register() {
   const eye = <FontAwesomeIcon icon={faEye} />
   const closeEye = <FontAwesomeIcon icon={faEyeSlash} />
 
+  const override = css`
+  display: block;
+  margin: 0 auto;
+  border-color: red;
+`;
+
   const handleChange = (event) => {
     SetCountry(event.target.value);
   };
 
   const onSubmit = (data) => {
     console.log(data);
-    // axios.post("http://localhost:3001/registeruser", data)
-    // .then(res => {
-    //   console.log('respuesta servidor', res)
-    // })
-    // .catch(error => {
-    //   console.log(error)
-    // })
+    setisLoading(true);
+    axios.post("http://localhost:3001/registeruser", data)
+    .then(res => {
+      console.log('respuesta servidor', res)
+      if (res.data.success === false) {
+        
+        console.log("error!");
+        setisLoading(false);
+        setMsg(res.data.msg);
+
+      } else {
+        // dispatch(loguser(res.data.data));
+        // setisLoading(false);
+        // navigate("/");
+        setisLoading(false);
+        console.log("exito!");
+        navigate("/signin");
+      }
+    })
+    .catch(error => {
+      console.log(error);
+      setisLoading(false);
+      setMsg(error);
+    })
   }
   const togglePasswordVisiblity = () => {
     setPasswordShown(passwordShown ? false : true);
@@ -61,6 +90,15 @@ function Register() {
     <div className="page-container">
       <div className="content-wrap">
         <Nav />
+        {isLoading ?
+          <div className="shader">
+            <div className="loadingContainer">
+              <ClimbingBoxLoader color={"#fff"} loading={true} css={override} size={15} />
+            </div>
+          </div>
+          :
+          null
+        }
         <h1 className="title">Sign Up</h1>
         <div className="div-signup-form">
           <form className="register-form" onSubmit={handleSubmit(onSubmit)}>
@@ -166,6 +204,7 @@ function Register() {
               </div>
             </div>
             {errors.confirmPassword && <span className="form-warning-msg"> {errors.confirmPassword.message} </span>}
+            <span className="form-warning-msg"> {msg} </span>
             <button className="button-signup" type="submit">
               Sign Up
             </button>
