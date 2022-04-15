@@ -6,7 +6,7 @@ import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from "react-redux";
-import { loguser } from "../State/actions/userAction";
+import { loguser, loguserstoraged } from "../State/actions/userAction";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { css } from "@emotion/react";
@@ -49,7 +49,7 @@ function Login() {
 
         } else {
           if (data.remember) {
-            dispatch(loguser(res.data.data));
+            dispatch(loguserstoraged(res.data.data));
             localStorage.setItem('currentUser', res.data.data)
             setisLoading(false);
             navigate("/");
