@@ -14,14 +14,13 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    () => {
+    
       if (!checksession) {
         window.localStorage.clear();
         dispatch(logoutuser());
       } else {
         return null;
       }
-    }
   }, [])
 
   return (
