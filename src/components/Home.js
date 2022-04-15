@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';
 import MenuItem from '@mui/material/MenuItem';
+import {useSelector} from "react-redux";
 
 const category = [
   {
@@ -24,6 +25,17 @@ function Home() {
   const handleChange = (event) => {
     SetCategories(event.target.value);
   };
+
+  const checksession = useSelector(state=>state.user.holdSession);
+
+  useEffect(() => {
+      if (!checksession) {
+        window.localStorage.clear();
+      } else {
+        return null;
+      }
+    
+  }, [])
 
   return (
     <div className="page-container home-container">
