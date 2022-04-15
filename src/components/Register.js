@@ -51,7 +51,7 @@ function Register() {
   const onSubmit = (data) => {
     console.log(data);
     setisLoading(true);
-    axios.post("http://localhost:3001/registeruser", data)
+    axios.post("https://barbozitoshop-server.herokuapp.com/registeruser", data)
     .then(res => {
       console.log('respuesta servidor', res)
       if (res.data.success === false) {
