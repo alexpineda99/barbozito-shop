@@ -108,7 +108,9 @@ function Login() {
               Log in
             </button>
           </form>
+          <div className="span-login"> 
           <p> ¿Don´t you have an account? <a href="./signup" className="linkto-signup"> Sign up here </a> </p>
+          </div>
         </div>
 
 
