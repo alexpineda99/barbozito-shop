@@ -4,24 +4,23 @@ import Home from './components/Home';
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Logout from "./components/Logout";
-import {useSelector} from "react-redux";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutuser } from "./State/actions/userAction";
 
 
 function App() {
-  const checksession = useSelector(state=>state.user.holdSession);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    
-      if (!checksession) {
-        window.localStorage.clear();
+    useEffect(() => {
+
+      const userssion = localStorage.getItem("currentUser");
+
+      if (!userssion) {
         dispatch(logoutuser());
-      } else {
-        return null;
       }
-  }, [])
+      
+    }, []);
+  
 
   return (
     <Router>

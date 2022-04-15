@@ -65,7 +65,6 @@ function Register() {
         // setisLoading(false);
         // navigate("/");
         setisLoading(false);
-        console.log("exito!");
         navigate("/signin");
       }
     })
