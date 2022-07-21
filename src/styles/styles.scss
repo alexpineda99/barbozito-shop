@@ -23,7 +23,7 @@ $font: "farray";
 //Esconde la barra vertical
 // *{
 //     overflow-y: overlay;
-     
+
 // }
 // *{
 //     -ms-overflow-style: none;
@@ -34,21 +34,21 @@ $font: "farray";
 
 html {
     overflow-y: scroll;
-  }
-  
-  @supports (scrollbar-gutter: stable) {
+}
+
+@supports (scrollbar-gutter: stable) {
     html {
-      overflow-y: auto;
-      scrollbar-gutter: stable;
+        overflow-y: auto;
+        scrollbar-gutter: stable;
     }
-  }
-  
-  @supports (overflow-y: overlay) {
+}
+
+@supports (overflow-y: overlay) {
     html {
-      overflow-y: overlay;
-      scrollbar-gutter: auto;
+        overflow-y: overlay;
+        scrollbar-gutter: auto;
     }
-  }
+}
 
 body {
     background-color: $bgcolor;
@@ -58,23 +58,23 @@ body {
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
+}
+
+/* Track */
+::-webkit-scrollbar-track {
     background: transparent;
     border-radius: 10px;
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #888; 
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
-  }
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
 
 .page-container {
     display: flex;
@@ -98,7 +98,7 @@ body {
 // }
 
 
-.seperator{
+.seperator {
     height: 25px;
     background-color: $bgcolor;
     border-top-left-radius: 6000px 150px;
@@ -118,10 +118,10 @@ body {
 .parallax {
     /* The image used */
     background-image: url("../Assets/img/photo1644162358-modified.jpeg");
-  
+
     /* Set a specific height */
     // min-height: 5px;
-  height: 800px;
+    height: 800px;
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
@@ -131,10 +131,17 @@ body {
     /* Body */
     background-position: 0 0;
 
-  }
+}
 
 .content-wrap {
     flex: 1;
+}
+
+.content-wrap-email-sender, .content-wrap-profile {
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 nav {
@@ -209,19 +216,31 @@ nav {
     width: 50%;
 }
 
-.login-form, .register-form {
+.login-form,
+.register-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-top: 2%;
 }
 
-.div-signup-form > .register-form {
+.span-login {
+    font-size: 80%;
+    margin-bottom: 1%;
+}
+
+.div-signup-form>.register-form {
+    width: 30%;
+}
+
+.div-login-form>.user-form {
+    margin-top: 1%;
     width: 30%;
 }
 
 
-.div-login-form, .div-signup-form {
+.div-login-form,
+.div-signup-form {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -235,6 +254,22 @@ nav {
     // margin-left: -100px;
 }
 
+.email-sender-div {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.email-sender-box {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+.text-emailsender {
+    text-align: center;
+}
+
 .css-i44wyl {
     width: 100%;
 }
@@ -243,23 +278,25 @@ nav {
     width: 30%;
 }
 
-.div-signup-form > .MuiFormControl-root .MuiTextField-root .css-1u3bzj6-MuiFormControl-root-MuiTextField-root, .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+.div-signup-form>.MuiFormControl-root .MuiTextField-root .css-1u3bzj6-MuiFormControl-root-MuiTextField-root,
+.css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
     width: 100%;
 }
 
-.register-form > .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+.register-form>.css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
     width: 100%;
 }
 
-.div-signup-form > .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+.div-signup-form>.css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
     width: 15% !important;
 }
 
-.div-signup-form > .button-shop, .button-shop::before {
+.div-signup-form>.button-shop,
+.button-shop::before {
     margin-top: 2%;
 }
 
-.div-signup-form > .button-shop::before {
+.div-signup-form>.button-shop::before {
     content: "Sign Up";
 }
 
@@ -270,10 +307,11 @@ nav {
 }
 
 
-.phone-div > div {
+.phone-div>div {
     &:nth-child(1) {
         width: 25%;
     }
+
     &:nth-child(2) {
         width: 70%;
     }
@@ -366,7 +404,8 @@ nav {
 }
 
 /* From cssbuttons.io by @kiru2741 */
-.button-signup, .button-signin {
+.button-signup,
+.button-signin, .button-emailverification, .button-sendrecoverpassword {
     display: flex;
     justify-content: center;
     padding: 10px;
@@ -380,7 +419,8 @@ nav {
     margin: 2em 2em;
 }
 
-.button-signup::before, .button-signin::before  {
+.button-signup::before,
+.button-signin::before, .button-emailverification::before, .button-sendrecoverpassword::before {
     /*Button's value/text-content */
     position: absolute;
     top: -14%;
@@ -404,9 +444,24 @@ nav {
     content: 'Login';
 }
 
-.button-signup:hover::before, .button-signin:hover::before  {
+.button-emailverification::before {
+    content: 'Send verification';
+}
+
+.button-sendrecoverpassword::before {
+    content: "Recover my password";
+}
+
+.button-signup:hover::before,
+.button-signin:hover::before, .button-emailverification:hover::before, .button-sendrecoverpassword:hover::before {
     top: 0;
     left: 0;
+}
+
+.profile-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin: 5% 5%;
 }
 
 .title {
@@ -429,23 +484,26 @@ nav {
 .shader {
     width: 100%;
     height: 100%;
-    background-color: #000; /** change it to this background-color: rgba(0, 0, 0, 0.65) **/
+    background-color: #000;
+    /** change it to this background-color: rgba(0, 0, 0, 0.65) **/
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
     position: fixed;
-    opacity: 0.5; /** you can remove this **/
+    opacity: 0.5;
+    /** you can remove this **/
     z-index: 1000000;
-  }
-  .loadingContainer {
+}
+
+.loadingContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
     margin: auto;
-  }
+}
 
 .neon-input-efect {
     box-shadow: 0 0 15px #00f2ff;
@@ -455,23 +513,26 @@ nav {
 .shader {
     width: 100%;
     height: 100%;
-    background-color: #000; /** change it to this background-color: rgba(0, 0, 0, 0.65) **/
+    background-color: #000;
+    /** change it to this background-color: rgba(0, 0, 0, 0.65) **/
     top: 100;
     bottom: 0;
     right: 0;
     left: 0;
     position: fixed;
-    opacity: 0.5; /** you can remove this **/
+    opacity: 0.5;
+    /** you can remove this **/
     z-index: 1000000;
-  }
-  .loadingContainer {
+}
+
+.loadingContainer {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 80%;
     margin: auto;
-  }  
+}
 
 .footer-container {
     display: flex;
@@ -485,7 +546,9 @@ nav {
     bottom: 0;
 }
 
-.footer-row-left, .footer-row-right, .footer-row-center {
+.footer-row-left,
+.footer-row-right,
+.footer-row-center {
     display: flex;
     flex-direction: column;
 }
@@ -538,7 +601,7 @@ nav {
     //     left: 20%;
     // }
 
-    .div-signup-form > .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+    .div-signup-form>.css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
         width: 30% !important;
     }
 
@@ -546,7 +609,7 @@ nav {
         width: 50% !important;
     }
 
-    .register-form {
+    .register-form, .user-form {
         width: 30% !important;
         margin-bottom: 5%;
     }
@@ -615,7 +678,7 @@ nav {
         width: 60%;
     }
 
-    .div-signup-form > .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+    .div-signup-form>.css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
         width: 60% !important;
     }
 
@@ -628,7 +691,9 @@ nav {
         margin-bottom: 5%;
     }
 
-    .footer-row-left, .footer-row-right, .footer-row-center {
+    .footer-row-left,
+    .footer-row-right,
+    .footer-row-center {
         display: flex;
         align-items: center;
         margin-top: 3%;

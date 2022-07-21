@@ -1428,7 +1428,7 @@ const countries_flags = [
     //     "flag": "https://cdn.kcak11.com/CountryFlags/countries/vu.svg"
     // },
     {
-        "name": "Venezuela, Bolivarian Republic of Venezuela",
+        "name": "Venezuela",
         "dialCode": "+58",
         "isoCode": "VE",
         "flag": "https://cdn.kcak11.com/CountryFlags/countries/ve.svg"

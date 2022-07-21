@@ -14,13 +14,14 @@ const styles= {
 
 function Nav() {
   const isLogged = useSelector(state=>state.user.isAuth);
+  const user = useSelector(state=>state.user.user)
   const logOutMenu = [
     {text: "Home", link: "/"},
-    {text: "Sign Up", link: "/signup"},
-    {text: "Sign In", link: "/signin"}];
+    {text: "Sign In", link: "/signin"},
+    {text: "Sign Up", link: "/signup"}];
 
     const loggedMenu = [
-      {text: "Profile", link: "/"},
+      {text: "Profile", link: `/profile/${user}`},
       {text: "Cart", link: "/"},
       {text: "Logout", link: "/logout"}];
 
@@ -31,7 +32,7 @@ function Nav() {
 
   return (
     <div>
-        <Navbar fontColor="#fff" backgroundColor="#1f2021" brand={<Link to='/'>Vade Retro  </Link>}
+        <Navbar fontColor="#fff" backgroundColor="#1f2021" brand={<Link to='/'> Le Vide Clothing  </Link>}
         links={isLogged ? loggedMenu : logOutMenu} />
         <div class="seperator" style={window?.location.pathname === '/' ? styles.seperator : null}></div>
     </div>

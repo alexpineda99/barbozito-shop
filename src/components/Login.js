@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
+import React, { useState } from 'react';
 import Nav from "./Navbar";
 import Footer from "./Footer";
 import axios from "axios";
@@ -36,6 +35,8 @@ function Login() {
   const togglePasswordVisiblity = () => {
     setPasswordShown(passwordShown ? false : true);
   };
+  // https://barbozitoshop-server.herokuapp.com/loguser
+  // http://localhost:3001/loguser
 
   const onSubmit = (data) => {
     console.log(data);
@@ -105,11 +106,14 @@ function Login() {
             <span className="form-warning-msg"> {msg} </span>
 
             <button className="button-signin" type="submit">
-              Log in
+              Login
             </button>
           </form>
           <div className="span-login"> 
-          <p> ¿Don´t you have an account? <a href="./signup" className="linkto-signup"> Sign up here </a> </p>
+          <p>  <a href="./" className="linkto-signup"> I forgot my password </a> </p>
+          </div>
+          <div className="span-login"> 
+          <p> <a href="./signup" className="linkto-signup"> Don't have an account? Register here </a> </p>
           </div>
         </div>
 
