@@ -2,13 +2,12 @@ import React, {useEffect} from "react";
 import { Link } from "react-router-dom";
 import {useSelector} from "react-redux";
 import { Navbar } from 'react-responsive-navbar-overlay';
-import img from "../Assets/img/photo1644162358-modified.jpeg";
-// import logo from "../Assets/img/oficial_logo-removebg-preview.png";
+// import img from "../Assets/img/photo1644162358-modified.jpeg";
 
 const styles= {
-  seperator: {
-    backgroundImage: `url(${img})`
-  },
+  // seperator: {
+  //   backgroundImage: `url(${img})`
+  // },
 };
 
 
