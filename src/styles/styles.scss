@@ -3,7 +3,7 @@
 
 
 // Paleta de colores 
-$bgcolor: #ececed;
+$bgcolor: #F4FDFF;
 $footercolor: #1f2021;
 //Otros colores
 $opcional1: #c6def3;
@@ -137,7 +137,8 @@ body {
     flex: 1;
 }
 
-.content-wrap-email-sender, .content-wrap-profile {
+.content-wrap-email-sender,
+.content-wrap-profile {
     flex: 1 1;
     display: flex;
     flex-direction: column;
@@ -206,6 +207,7 @@ nav {
 .search {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: baseline;
 }
 
@@ -280,7 +282,7 @@ nav {
 
 .div-signup-form>.MuiFormControl-root .MuiTextField-root .css-1u3bzj6-MuiFormControl-root-MuiTextField-root,
 .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
-    width: 100%;
+    width: 30%;
 }
 
 .register-form>.css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
@@ -289,6 +291,15 @@ nav {
 
 .div-signup-form>.css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
     width: 15% !important;
+}
+
+.css-1c2i806-MuiFormLabel-root-MuiInputLabel-root {
+    font-size: 1.3rem !important;
+}
+
+.css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root {
+    font-weight: 500 !important;
+    font-size: 1.2rem !important;
 }
 
 .div-signup-form>.button-shop,
@@ -360,6 +371,7 @@ nav {
 .css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input.css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input.css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input {
     display: flex;
     align-items: center;
+    font-size: 1.1rem;
 }
 
 .border-phone-input {
@@ -405,7 +417,9 @@ nav {
 
 /* From cssbuttons.io by @kiru2741 */
 .button-signup,
-.button-signin, .button-emailverification, .button-sendrecoverpassword {
+.button-signin,
+.button-emailverification,
+.button-sendrecoverpassword {
     display: flex;
     justify-content: center;
     padding: 10px;
@@ -420,7 +434,9 @@ nav {
 }
 
 .button-signup::before,
-.button-signin::before, .button-emailverification::before, .button-sendrecoverpassword::before {
+.button-signin::before,
+.button-emailverification::before,
+.button-sendrecoverpassword::before {
     /*Button's value/text-content */
     position: absolute;
     top: -14%;
@@ -453,7 +469,9 @@ nav {
 }
 
 .button-signup:hover::before,
-.button-signin:hover::before, .button-emailverification:hover::before, .button-sendrecoverpassword:hover::before {
+.button-signin:hover::before,
+.button-emailverification:hover::before,
+.button-sendrecoverpassword:hover::before {
     top: 0;
     left: 0;
 }
@@ -478,6 +496,7 @@ nav {
 
 .css-1nrlq1o-MuiFormControl-root {
     width: 30% !important;
+    align-items: center !important;
 }
 
 /* loading screen */
@@ -609,7 +628,8 @@ nav {
         width: 50% !important;
     }
 
-    .register-form, .user-form {
+    .register-form,
+    .user-form {
         width: 30% !important;
         margin-bottom: 5%;
     }
