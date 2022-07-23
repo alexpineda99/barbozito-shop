@@ -30,13 +30,13 @@ function Home() {
       <div className="content-wrap parallax">
         <Nav />
         <div className="search">
-          {/* <div className="select-category"> */}
-            <FormControl size="small">
+          <div className="select-category">
+            {/* <FormControl size="small"> */}
               <TextField id="standard-basic" label="Search" variant="standard" />
-            </FormControl>
-          {/* </div> */}
-          {/* <div className="search-bar"> */}
-            <FormControl size="small">
+            {/* </FormControl> */}
+          </div>
+          <div className="search-bar">
+            {/* <FormControl size="small"> */}
               <TextField
                 id="standard-select-categories"
                 select
@@ -51,8 +51,8 @@ function Home() {
                   </MenuItem>
                 ))}
               </TextField>
-            </FormControl>
-          {/* </div> */}
+            {/* </FormControl> */}
+          </div>
 
         </div>
       </div>
