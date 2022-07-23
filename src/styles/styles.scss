@@ -207,7 +207,7 @@ nav {
 .search {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: baseline;
 }
 
@@ -273,11 +273,7 @@ nav {
 }
 
 .css-i44wyl {
-    width: 100%;
-}
-
-.css-13sljp9 {
-    width: 30%;
+    width: 25% !important;
 }
 
 .div-signup-form>.MuiFormControl-root .MuiTextField-root .css-1u3bzj6-MuiFormControl-root-MuiTextField-root,
@@ -695,7 +691,7 @@ nav {
     }
 
     .css-13sljp9 {
-        width: 60%;
+        width: 10% !important;
     }
 
     .div-signup-form>.css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
