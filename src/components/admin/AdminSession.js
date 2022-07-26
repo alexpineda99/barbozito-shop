@@ -69,7 +69,7 @@ function AdminSession () {
 
   return (
     <div className="page-container">
-      <div className="content-wrap">
+      <div className="content-wrap-admin">
         {isLoading ?
           <div className="shader">
             <div className="loadingContainer">
@@ -81,7 +81,7 @@ function AdminSession () {
         }
 
         <div className="div-login-form">
-          <h1 className="title">Login</h1>
+          <h1 className="title">Panel admin</h1>
           <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
 
             <TextField id="email" label="Email" variant="standard" {...register("email")} />
