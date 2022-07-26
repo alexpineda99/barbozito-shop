@@ -6,6 +6,7 @@ import Register from "./components/Register";
 import Profile from "./components/User/userProfile";
 import Logout from "./components/Logout";
 import Resend from "./components/Verify_Recover/resendEmail";
+import AdminSession from './components/admin/AdminSession';
 import SendRecover from "./components/Verify_Recover/sendRecoverPassword";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutuser } from "./State/actions/userAction";
@@ -34,6 +35,7 @@ function App() {
           <Route exact path="/profile/:token" element={<Profile />} />
           <Route exact path="/resendemail/" element={<Resend />} />
           <Route exact path="/sendrecoverpassword/" element={<SendRecover />} />
+          <Route exact path="/admin-session/" element={<AdminSession />} />
           <Route exact path="/logout/" element={<Logout />} />
           <Route path="*" element={<Navigate to="/" />} />
       </Routes>
