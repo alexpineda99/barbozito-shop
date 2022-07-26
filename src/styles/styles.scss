@@ -248,6 +248,12 @@ nav {
     margin-top: 1%;
     width: 30%;
 }
+.content-wrap-email-sender .user-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 
 .div-login-form,
