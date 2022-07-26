@@ -51,7 +51,7 @@ function ResendEmail() {
 
         <div className="email-sender-div">
           <div className="email-sender-box">
-            <form className="user-form" onSubmit={handleSubmit(onSubmit)}>
+            <form className="user-form-resend" onSubmit={handleSubmit(onSubmit)}>
               <span className="text-emailsender"> Please enter your email </span>
               <TextField id="email" label="Email" variant="standard"  {...register("email")} />
               <button className="button-emailverification" type="submit">
