@@ -41,12 +41,17 @@ function Login() {
   const onSubmit = (data) => {
     console.log(data);
     setisLoading(true);
-    axios.post("https://barbozitoshop-server.herokuapp.com/loguser", data)
+    axios.post("http://localhost:3001/loguser", data)
       .then(res => {
         console.log(res.data)
         if (res.data.success === false) {
           setisLoading(false);
           setMsg(res.data.msg);
+
+        } else if (res.data.msg === "Please verify your account") {
+
+          setisLoading(false);
+          setMsg(<Link to="/resendemail/" className="verification-resend-msg" >Click to verify your account!</Link>);
 
         } else {
           if (data.remember) {

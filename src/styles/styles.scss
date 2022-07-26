@@ -354,17 +354,17 @@ nav {
     margin-top: .4em;
 }
 
-.linkto-signup:link {
+.linkto-signup:link, .verification-resend-msg:link {
     color: #000;
     text-decoration: none;
 }
 
-.linkto-signup:visited {
+.linkto-signup:visited, .verification-resend-msg:visited {
     color: #000;
     text-decoration: none;
 }
 
-.linkto-signup:hover {
+.linkto-signup:hover, .verification-resend-msg:hover {
     color: #2761cc;
     text-decoration: none;
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import ReactDOM from 'react-dom';
 import { useForm } from "react-hook-form";
+import { useNavigate, Link } from "react-router-dom";
 import TextField from '@mui/material/TextField';
 import axios from "axios";
 import Footer from "../Footer";
@@ -8,6 +8,8 @@ import Footer from "../Footer";
 function ResendEmail() {
 
   let [isLoading, setisLoading] = useState(false);
+  let [msg, setMsg] = useState(null);
+  const navigate = useNavigate();
 
   const { register, handleSubmit, watch, control, formState, setValue } = useForm({
     mode: "onChange",
@@ -21,9 +23,21 @@ function ResendEmail() {
     axios.post(`http://localhost:3001/resendemailuser`, data)
 
       .then(res => {
-        console.log(res.data.data);
-        // setValue("country", res.data.data.country);
-        setisLoading(false);
+
+        if (res.data.success === false) {
+          setisLoading(false);
+          setMsg(res.data.msg);
+
+        } else {
+
+          setTimeout(() => {
+            
+            alert("An email has been sent to your email to verify your account!");
+            navigate("/signin");
+          }, 3000);
+          
+        }
+
       }).catch(err => {
         console.log(err);
         setisLoading(false);
@@ -37,12 +51,12 @@ function ResendEmail() {
 
         <div className="email-sender-div">
           <div className="email-sender-box">
-          <form className="user-form" onSubmit={handleSubmit(onSubmit)}>
-            <span className="text-emailsender"> Please enter your email </span>
-            <TextField id="email" label="Email" variant="standard"  {...register("email")} />
-            <button className="button-emailverification" type="submit">
-              Log in
-            </button>
+            <form className="user-form" onSubmit={handleSubmit(onSubmit)}>
+              <span className="text-emailsender"> Please enter your email </span>
+              <TextField id="email" label="Email" variant="standard"  {...register("email")} />
+              <button className="button-emailverification" type="submit">
+                Log in
+              </button>
             </form>
           </div>
         </div>
