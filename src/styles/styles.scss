@@ -524,6 +524,40 @@ nav {
     align-items: center !important;
 }
 
+.main-admin-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+
+.admin-selection {
+    border: 1px #222 solid;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    margin-bottom: 1rem;
+}
+
+.admin-selection:hover {
+    background-color: #222;
+    color: #c6def3;
+}
+
+.main-admin-div a {
+    text-decoration: none;
+    width: 30%;
+}
+
+.main-admin-div a:visited {
+    color: #222;
+}
+
+// .admin-selection:hover {
+//     color: #fff;
+// }
+
 /* loading screen */
 .shader {
     width: 100%;
