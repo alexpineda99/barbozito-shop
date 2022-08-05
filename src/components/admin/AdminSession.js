@@ -35,11 +35,12 @@ function AdminSession () {
   };
   // https://barbozitoshop-server.herokuapp.com/loguser
   // http://localhost:3001/loguser
+  // http://localhost:3001/adminpro
 
   const onSubmit = (data) => {
     console.log(data);
     setisLoading(true);
-    axios.post("https://barbozitoshop-server.herokuapp.com/loguser", data)
+    axios.post("http://localhost:3001/adminpro", data)
       .then(res => {
         console.log(res.data)
         if (res.data.success === false) {
@@ -47,17 +48,10 @@ function AdminSession () {
           setMsg(res.data.msg);
 
         } else {
-          if (data.remember) {
             dispatch(loguserstoraged(res.data.data));
-            localStorage.setItem('currentUser', res.data.data)
+            localStorage.setItem('currentA', res.data.data)
             setisLoading(false);
-            navigate("/");
-          } else {
-            dispatch(loguser(res.data.data));
-            sessionStorage.setItem('currentUser', res.data.data)
-            setisLoading(false);
-            navigate("/");
-          }
+            navigate("/admin-panel");
         }
       })
       .catch(error => {
