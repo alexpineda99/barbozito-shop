@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import TextField from '@mui/material/TextField';
+import Modal from "../admin_modals/check_adminPass";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { css } from "@emotion/react";
@@ -33,6 +34,7 @@ function AddCategory() {
     return (
         <div className="page-container">
             <div className="content-wrap-admin">
+                <Modal/>
                 {isLoading ?
                     <div className="shader">
                         <div className="loadingContainer">
@@ -47,7 +49,7 @@ function AddCategory() {
 
                 <div>
                     <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
-                        <TextField id="email" label="Email" variant="standard" {...register("email")} />
+                        <TextField id="category" label="Add category" variant="standard" {...register("category")} />
                     </form>
                 </div>
 

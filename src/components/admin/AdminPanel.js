@@ -9,7 +9,8 @@ import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
 
 function AdminSession() {
 
-  const state = useSelector(state => console.log(state));
+  const state = useSelector(state => state);
+  console.log(state.user.user);
   let [msg, setMsg] = useState(null);
   let [isLoading, setisLoading] = useState(false);
   const dispatch = useDispatch();
@@ -22,6 +23,16 @@ function AdminSession() {
 `;
 
   useEffect(() => {
+
+    axios.get("http://localhost:3001/admin-panel", {headers: { 'authad': state.user.user }})
+      .then(res => {
+        console.log(res.data)
+      })
+      .catch(error => {
+        console.log(error);
+        navigate("/");
+        
+      })
 
   }, []);
 
@@ -57,6 +68,11 @@ function AdminSession() {
           <Link to="">
             <div className="admin-selection">
               Ver ventas
+            </div>
+          </Link>
+          <Link to="/logout">
+            <div className="admin-selection">
+              Cerrar sesion
             </div>
           </Link>
         </div>
