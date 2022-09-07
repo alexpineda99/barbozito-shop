@@ -9,6 +9,7 @@ import Resend from "./components/Verify_Recover/resendEmail";
 import AdminSession from './components/admin/AdminSession';
 import AdminPanel from "./components/admin/AdminPanel";
 import AddCategory from './components/admin/admin_components/AddCategory';
+import Viewusers from "./components/admin/admin_components/ViewUser";
 import SendRecover from "./components/Verify_Recover/sendRecoverPassword";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutuser } from "./State/actions/userAction";
@@ -40,6 +41,7 @@ function App() {
           <Route exact path="/admin-session/" element={<AdminSession />} />
           <Route exact path="/admin-panel/" element={<AdminPanel />} />
           <Route exact path="/admin-panel/adder-category" element={<AddCategory />} />
+          <Route exact path="/admin-panel/viewusers" element={<Viewusers />} />
           <Route exact path="/logout/" element={<Logout />} />
           <Route path="*" element={<Navigate to="/" />} />
       </Routes>

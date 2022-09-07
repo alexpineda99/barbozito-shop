@@ -13,6 +13,9 @@ function AddCategory() {
     const state = useSelector(state => console.log(state));
     const { register, handleSubmit } = useForm();
     let [msg, setMsg] = useState(null);
+    let [isOpen,SetisOpen] = useState(false);
+    let [endpoint,SetEndpoint] = useState(null);
+    let [payload,SetPayload] = useState(null);
     let [isLoading, setisLoading] = useState(false);
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -25,6 +28,9 @@ function AddCategory() {
 
     const onSubmit = (data) => {
         console.log(data);
+        SetEndpoint("url enviadad");
+        SetPayload(data.category);
+        SetisOpen(!isOpen);
     }
 
     useEffect(() => {
@@ -34,7 +40,6 @@ function AddCategory() {
     return (
         <div className="page-container">
             <div className="content-wrap-admin">
-                <Modal/>
                 {isLoading ?
                     <div className="shader">
                         <div className="loadingContainer">
@@ -45,11 +50,21 @@ function AddCategory() {
                     null
                 }
 
+                {isOpen ?
+
+                <Modal endpoint={endpoint} data={payload} /> : 
+
+                null
+                }
+
                 <h1>Add category</h1>
 
                 <div>
                     <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
                         <TextField id="category" label="Add category" variant="standard" {...register("category")} />
+                        <button className="" type="submit">
+                        añadir categoria
+                    </button>
                     </form>
                 </div>
 

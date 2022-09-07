@@ -60,7 +60,7 @@ function AdminSession() {
               Anadir o eliminar articulo
             </div>
           </Link>
-          <Link to="">
+          <Link to="/admin-panel/viewusers">
             <div className="admin-selection">
               Ver usuarios
             </div>
