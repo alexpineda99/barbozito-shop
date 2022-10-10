@@ -16,9 +16,9 @@ const Checkpass = (props) => {
     const [passwordShown, setPasswordShown] = useState(false);
     const state = useSelector(state => state);
     const { register, handleSubmit, reset } = useForm();
-    const {endpoint, data} = props;
+    const {endpoint, payload} = props;
 
-    console.log(`${endpoint}/${data}`);
+    console.log(`${endpoint}/${payload}`);
 
     const togglePasswordVisiblity = () => {
         setPasswordShown(passwordShown ? false : true);
@@ -26,6 +26,7 @@ const Checkpass = (props) => {
 
     const onSubmit = (data) => {
         console.log(data);
+        console.log("El payload es " + payload);
         axios.post("http://localhost:3001/admincheckerpass", data, { headers: { 'authad': state.user.user } })
             .then(res => {
                 console.log(res.data);

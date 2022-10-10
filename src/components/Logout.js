@@ -10,6 +10,8 @@ const Logout = () => {
 
     useEffect(() => {
         dispatch(logoutuser()); 
+        localStorage.removeItem("currentA");
+        sessionStorage.removeItem("currentA");
         localStorage.removeItem("currentUser");
         sessionStorage.removeItem("currentUser");
         navigate("/");

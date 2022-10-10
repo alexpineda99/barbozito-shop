@@ -38,9 +38,9 @@ function Viewusers() {
 
         axios.get("http://localhost:3001/adminusers")
             .then(res => {
-                console.log(res.data);
+                console.log(res.data.data);
                 // console.log(res.data.data);
-                // setUsers(res.data.data);
+                setUsers(res.data.data);
                 // console.log(users);
             })
             .catch(error => {
@@ -86,12 +86,21 @@ function Viewusers() {
 
                 <div>
                     Users
-                    {/* {users.map((user, i) =>
+                    {users.map((user, i) =>
                         <div>
-                            {user.name} {user.email} {user.id}
+                            {user.name}
+
+                            {user.email}
                             
+                            <button> 
+                                <a href={`http://localhost:3001/delete/${user.id}`} >
+                                Eliminar Usuario
+                                </a>
+
+                            </button>
+
                         </div>
-                    )} */}
+                    )}
 
 
                 </div>

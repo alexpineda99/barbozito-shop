@@ -5,7 +5,9 @@ import TextField from '@mui/material/TextField';
 import Modal from "../admin_modals/check_adminPass";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import Box from '@mui/material/Box';
 import { css } from "@emotion/react";
+import Button from '@mui/material/Button';
 import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
 
 function AddCategory() {
@@ -13,9 +15,9 @@ function AddCategory() {
     const state = useSelector(state => console.log(state));
     const { register, handleSubmit } = useForm();
     let [msg, setMsg] = useState(null);
-    let [isOpen,SetisOpen] = useState(false);
-    let [endpoint,SetEndpoint] = useState(null);
-    let [payload,SetPayload] = useState(null);
+    let [isOpen, SetisOpen] = useState(false);
+    let [endpoint, SetEndpoint] = useState(null);
+    let [payload, SetPayload] = useState(null);
     let [isLoading, setisLoading] = useState(false);
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -27,13 +29,20 @@ function AddCategory() {
 `;
 
     const onSubmit = (data) => {
-        console.log(data);
         SetEndpoint("url enviadad");
         SetPayload(data.category);
+        console.log(payload);
         SetisOpen(!isOpen);
     }
 
     useEffect(() => {
+
+        axios.get("http://localhost:3001/categories")
+            .then((res) => {
+                console.log(res.data)
+            }).catch((err) => {
+                console.log(err)
+            })
 
     }, []);
 
@@ -52,9 +61,9 @@ function AddCategory() {
 
                 {isOpen ?
 
-                <Modal endpoint={endpoint} data={payload} /> : 
+                    <Modal endpoint={endpoint} payload={payload} /> :
 
-                null
+                    null
                 }
 
                 <h1>Add category</h1>
@@ -62,9 +71,11 @@ function AddCategory() {
                 <div>
                     <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
                         <TextField id="category" label="Add category" variant="standard" {...register("category")} />
-                        <button className="" type="submit">
-                        añadir categoria
-                    </button>
+                        <Box sx={{display: "flex", justifyContent: "center", width: "100%"}} >
+                            <Button variant="contained" type="submit">
+                                añadir categoria
+                            </Button>
+                        </Box>
                     </form>
                 </div>
 
