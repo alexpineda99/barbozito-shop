@@ -1,12 +1,12 @@
 import React from 'react';
 import  ReactDOM  from  'react-dom';
-import {SocialMediaIconsReact} from 'social-media-icons-react';
+import {SocialIcon} from "react-social-icons";
 
 function Footer() {
 
-  const Ig = <SocialMediaIconsReact borderColor="rgba(0,0,0,0.25)" borderWidth="0" borderStyle="solid" icon="instagram" iconColor="rgba(255,255,255,1)" backgroundColor="icon" iconSize="5" roundness="50%" url="https://some-website.com/my-social-media-url" size="29" />;
-  const Fb = <SocialMediaIconsReact borderColor="rgba(0,0,0,0.25)" borderWidth="0" borderStyle="solid" icon="facebook" iconColor="rgba(255,255,255,1)" backgroundColor="icon" iconSize="5" roundness="50%" url="https://some-website.com/my-social-media-url" size="29" />;
-  const Tw = <SocialMediaIconsReact borderColor="rgba(0,0,0,0.25)" borderWidth="0" borderStyle="solid" icon="twitter" iconColor="rgba(255,255,255,1)" backgroundColor="icon" iconSize="5" roundness="50%" url="https://some-website.com/my-social-media-url" size="29" />;
+  const Ig = <SocialIcon borderColor="rgba(0,0,0,0.25)" borderWidth="0" network='instagram' borderStyle="solid" icon="instagram" iconColor="rgba(255,255,255,1)" backgroundColor="icon" iconSize="5" roundness="50%" url="https://some-website.com/my-social-media-url" size="29" />;
+  const Fb = <SocialIcon borderColor="rgba(0,0,0,0.25)" borderWidth="0" network='facebook' borderStyle="solid" icon="facebook" iconColor="rgba(255,255,255,1)" backgroundColor="icon" iconSize="5" roundness="50%" url="https://some-website.com/my-social-media-url" size="29" />;
+  const Tw = <SocialIcon borderColor="rgba(0,0,0,0.25)" borderWidth="0" network='twitter' borderStyle="solid" icon="twitter" iconColor="rgba(255,255,255,1)" backgroundColor="icon" iconSize="5" roundness="50%" url="https://some-website.com/my-social-media-url" size="29" />;
 
     return (
       <div className="main-footer">

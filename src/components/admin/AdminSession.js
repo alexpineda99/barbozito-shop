@@ -38,7 +38,6 @@ function AdminSession () {
   // http://localhost:3001/adminpro
 
   const onSubmit = (data) => {
-    console.log(data);
     setisLoading(true);
     axios.post("http://localhost:3001/adminpro", data)
       .then(res => {
