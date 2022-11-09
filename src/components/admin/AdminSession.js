@@ -48,7 +48,7 @@ function AdminSession () {
 
         } else {
             dispatch(loguserstoraged(res.data.data));
-            localStorage.setItem('currentA', res.data.data)
+            sessionStorage.setItem('currentA', res.data.data);
             setisLoading(false);
             navigate("/admin-panel");
         }

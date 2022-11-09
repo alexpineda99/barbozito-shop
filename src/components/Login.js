@@ -41,7 +41,7 @@ function Login() {
   const onSubmit = (data) => {
     console.log(data);
     setisLoading(true);
-    axios.post("http://localhost:3001/loguser", data)
+    axios.post("https://barbozitoshop-server.herokuapp.com/loguser", data)
       .then(res => {
         console.log(res.data)
         if (res.data.success === false) {

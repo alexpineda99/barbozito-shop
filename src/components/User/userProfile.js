@@ -64,12 +64,12 @@ function UserProfile() {
   useEffect(() => {
     // setValue("email", res.data.data.email);
     setisLoading(true);
-    axios.get(`https://barbozitoshop-server.herokuapp.com/profile/${token}`, {
+    axios.get(`http://localhost:3001/profile/${token}`, {
       headers: { 'auth': token },
     })
 
       .then(res => {
-        console.log(res.data.data);
+        console.log(res);
         // console.log(hasChanged);
         setName(res.data.data.name);
         setValue("name", res.data.data.name);
@@ -83,8 +83,8 @@ function UserProfile() {
         setisLoading(false);
       }).catch(err => {
         console.log(err);
-        window.location.href = "/";
-        <Logout />
+        // window.location.href = "/";
+        // <Logout />
         setisLoading(false);
 
       })

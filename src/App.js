@@ -16,9 +16,15 @@ import { logoutuser } from "./State/actions/userAction";
 
 
 function App() {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const state = useSelector(state => state);
+  console.log( "estado de mi app " + state.user.isAuth);
 
   useEffect(() => {
+
+    if (!sessionStorage.getItem("currentUser")) {
+      dispatch(logoutuser());
+    }
 
     // const userssion = localStorage.getItem("currentUser");
     // const userssion = sessionStorage.getItem("currentUser");
