@@ -1,0 +1,692 @@
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+fieldset, img {
+  border: 0;
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-style: normal;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+caption, th {
+  text-align: left;
+}
+
+q:before, q:after {
+  content: "";
+}
+
+abbr, acronym {
+  border: 0;
+}
+
+@font-face {
+  font-family: "farray";
+  src: url("../Assets/fonts/FARRAY.otf");
+}
+html {
+  overflow-y: scroll;
+}
+
+@supports (scrollbar-gutter: stable) {
+  html {
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+  }
+}
+@supports (overflow-y: overlay) {
+  html {
+    overflow-y: overlay;
+    scrollbar-gutter: auto;
+  }
+}
+body {
+  background-color: #F4FDFF;
+  font-family: "farray";
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.home-container {
+  min-height: 100vh;
+}
+
+.seperator {
+  height: 25px;
+  background-color: #F4FDFF;
+  border-top-left-radius: 6000px 150px;
+  border-top-right-radius: 6000px 150px;
+  top: -17px;
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+}
+
+.parallax {
+  /* The image used */
+  /* Set a specific height */
+  height: 800px;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* Body */
+  background-position: 0 0;
+}
+
+.content-wrap {
+  flex: 1;
+}
+
+.content-wrap-profile {
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-wrap-email-sender {
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+}
+
+nav {
+  padding: 0.5em !important;
+}
+
+.nav-container {
+  font-family: "farray" !important;
+  height: 62px;
+}
+
+.nav-links {
+  justify-content: center !important;
+  font-size: 17px !important;
+  font-weight: 900;
+}
+
+.nav-brand {
+  font-size: 30px !important;
+  font-weight: 700 !important;
+}
+
+.nav-brand > a {
+  text-decoration: none;
+  display: flex;
+  color: #fff;
+  font-size: 24px;
+  height: 100%;
+  align-items: flex-start;
+}
+
+.img-logo-navbar {
+  height: 45px;
+  width: 90px;
+  filter: brightness(0) invert(1);
+  transform: rotate(23deg);
+}
+
+.nav-hamburguer-icon:hover {
+  color: #fff !important;
+  transition: ease-in-out 0.2s;
+}
+
+.overlay-container-show {
+  background-color: #1f2021 !important;
+}
+
+.overlay-container-hidden {
+  background-color: #1f2021 !important;
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.search-bar,
+.select-category {
+  display: flex;
+  justify-content: center;
+  width: 8rem;
+  margin-right: 5%;
+}
+
+.login-form,
+.register-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 2%;
+}
+
+.span-login {
+  font-size: 80%;
+  margin-bottom: 1%;
+}
+
+.div-signup-form > .register-form {
+  width: 30%;
+}
+
+.div-login-form > .user-form {
+  margin-top: 1%;
+  width: 30%;
+}
+
+.content-wrap-email-sender .user-form-resend {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.div-login-form,
+.div-signup-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.email-sender-div {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.email-sender-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.text-emailsender {
+  text-align: center;
+}
+
+.css-i44wyl {
+  width: 100% !important;
+  margin-right: 2% !important;
+}
+
+.div-signup-form > .MuiFormControl-root .MuiTextField-root .css-1u3bzj6-MuiFormControl-root-MuiTextField-root,
+.css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+  width: 30%;
+}
+
+.register-form > .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+  width: 100%;
+}
+
+.div-signup-form > .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+  width: 15% !important;
+}
+
+.css-1c2i806-MuiFormLabel-root-MuiInputLabel-root {
+  font-size: 1.3rem !important;
+}
+
+.css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root {
+  font-weight: 500 !important;
+  font-size: 1.2rem !important;
+}
+
+.div-signup-form > .button-shop,
+.button-shop::before {
+  margin-top: 2%;
+}
+
+.div-signup-form > .button-shop::before {
+  content: "Sign Up";
+}
+
+.phone-div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.phone-div > div:nth-child(1) {
+  width: 25%;
+}
+.phone-div > div:nth-child(2) {
+  width: 70%;
+}
+
+._2eBPT {
+  width: 100% !important;
+}
+
+.form-warning-msg {
+  display: flex;
+  justify-content: center;
+  color: #B33A3A;
+  margin: 0.2em;
+  font-size: 0.6em;
+}
+
+.password-validate-msg-main {
+  text-align: center;
+}
+
+.password-validate-msg {
+  margin-top: 0.4em;
+}
+
+.linkto-signup:link, .verification-resend-msg:link {
+  color: #000;
+  text-decoration: none;
+}
+
+.linkto-signup:visited, .verification-resend-msg:visited {
+  color: #000;
+  text-decoration: none;
+}
+
+.linkto-signup:hover, .verification-resend-msg:hover {
+  color: #2761cc;
+  text-decoration: none;
+}
+
+.nav-hamburguer-icon {
+  color: white;
+  font-size: 30px !important;
+}
+
+.css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input.css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input.css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input {
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+}
+
+.border-phone-input {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+}
+
+.select-country-items {
+  width: 10%;
+  height: 10%;
+}
+
+.select-country-items-code {
+  height: 10%;
+  width: 30%;
+}
+
+.css-10nakn3-MuiModal-root-MuiPopover-root-MuiMenu-root {
+  width: 25%;
+}
+
+.select-category .css-1cccqvr.css-1cccqvr.css-1cccqvr {
+  display: flex;
+  font-size: 1.1rem;
+}
+
+.select-category .css-348fk2 {
+  font-size: 1.3rem !important;
+}
+
+.select-category .css-mqt2s5 {
+  font-size: 1.1rem !important;
+}
+
+.css-177ic5c {
+  width: 25%;
+}
+
+.icon-eye {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.icon {
+  position: absolute;
+  margin-bottom: 5px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+/* From cssbuttons.io by @kiru2741 */
+.button-signup,
+.button-signin,
+.button-emailverification,
+.button-sendrecoverpassword {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  font-size: 15px;
+  outline: none;
+  border: 2px solid black;
+  background-color: white;
+  color: white;
+  position: relative;
+  letter-spacing: 1px;
+  margin: 2em 2em;
+}
+
+.button-signup::before,
+.button-signin::before,
+.button-emailverification::before,
+.button-sendrecoverpassword::before {
+  /*Button's value/text-content */
+  position: absolute;
+  top: -14%;
+  left: 7%;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.15s ease-in-out;
+  font-weight: bold;
+}
+
+.button-signup::before {
+  content: "Sign Up";
+}
+
+.button-signin::before {
+  content: "Login";
+}
+
+.button-emailverification::before {
+  content: "Send verification";
+}
+
+.button-sendrecoverpassword::before {
+  content: "Recover my password";
+}
+
+.button-signup:hover::before,
+.button-signin:hover::before,
+.button-emailverification:hover::before,
+.button-sendrecoverpassword:hover::before {
+  top: 0;
+  left: 0;
+}
+
+.email-sender-div .button-emailverification {
+  width: 50%;
+}
+
+.profile-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin: 5% 5%;
+}
+
+.title {
+  text-align: center;
+}
+
+.button-shop:hover::before {
+  width: 105%;
+}
+
+.button-shop:hover {
+  color: #111;
+}
+
+.css-1nrlq1o-MuiFormControl-root {
+  width: 30% !important;
+  align-items: center !important;
+}
+
+.main-admin-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+}
+
+.admin-selection {
+  border: 1px #222 solid;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  margin-bottom: 1rem;
+}
+
+.main-admin-div > a:link {
+  color: #222;
+}
+
+.admin-selection:hover {
+  background-color: #222;
+  color: #c6def3;
+}
+
+.a-modal-pass-button {
+  margin-top: 10%;
+}
+
+.main-admin-div a {
+  text-decoration: none;
+  width: 30%;
+}
+
+.main-admin-div a:visited {
+  color: #222;
+}
+
+/* loading screen */
+.shader {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  /** change it to this background-color: rgba(0, 0, 0, 0.65) **/
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: fixed;
+  opacity: 0.5;
+  /** you can remove this **/
+  z-index: 1000000;
+}
+
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+.neon-input-efect {
+  box-shadow: 0 0 15px #00f2ff;
+}
+
+/* loading screen */
+.shader {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  /** change it to this background-color: rgba(0, 0, 0, 0.65) **/
+  top: 100;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: fixed;
+  opacity: 0.5;
+  /** you can remove this **/
+  z-index: 1000000;
+}
+
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80%;
+  margin: auto;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  align-items: center;
+  background-color: #1f2021;
+  padding: 0.5em;
+  font-size: 16px;
+  position: relative;
+  bottom: 0;
+}
+
+.footer-row-left,
+.footer-row-right,
+.footer-row-center {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 1024px) {
+  .nav-links {
+    font-size: 14px !important;
+  }
+  .img-logo-navbar {
+    width: 70px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .nav-brand {
+    font-size: 25px !important;
+    font-weight: 700 !important;
+  }
+  .nav-links {
+    font-size: 10px !important;
+    font-weight: 900;
+  }
+  .img-logo-navbar {
+    width: 60px;
+  }
+  .div-signup-form > .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+    width: 30% !important;
+  }
+  .css-1nrlq1o-MuiFormControl-root {
+    width: 50% !important;
+  }
+  .register-form,
+  .user-form {
+    width: 30% !important;
+    margin-bottom: 5%;
+  }
+  .seperator {
+    background-position: -280px 0px;
+    background-size: unset;
+  }
+  .parallax {
+    background-position: -280px 0px;
+    background-size: unset;
+  }
+}
+@media screen and (max-width: 425px) {
+  nav {
+    align-items: flex-start !important;
+  }
+  .span-login {
+    font-size: 70%;
+    margin-bottom: 6%;
+  }
+  .img-logo-navbar {
+    width: 50px;
+  }
+  .css-13sljp9 {
+    width: 30% !important;
+  }
+  .div-signup-form > .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+    width: 60% !important;
+  }
+  .css-1nrlq1o-MuiFormControl-root {
+    width: 60% !important;
+  }
+  .register-form {
+    width: 80% !important;
+    margin-bottom: 5%;
+  }
+  .footer-row-left,
+  .footer-row-right,
+  .footer-row-center {
+    display: flex;
+    align-items: center;
+    margin-top: 3%;
+  }
+  .footer-container {
+    flex-direction: column;
+    font-size: 19px;
+    padding: 0%;
+  }
+}
+@media screen and (max-width: 375px) {
+  .seperator {
+    background-position: -120px 0px;
+  }
+  .parallax {
+    background-position: -120px 0px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .seperator {
+    background-position: -140px 0px;
+  }
+  .parallax {
+    background-position: -140px 0px;
+  }
+}/*# sourceMappingURL=styles.css.map */

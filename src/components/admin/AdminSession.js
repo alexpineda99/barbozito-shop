@@ -41,7 +41,7 @@ function AdminSession () {
     setisLoading(true);
     axios.post("http://localhost:3001/adminpro", data)
       .then(res => {
-        console.log(res.data)
+        // console.log(res.data)
         if (res.data.success === false) {
           setisLoading(false);
           setMsg(res.data.msg);
@@ -54,7 +54,7 @@ function AdminSession () {
         }
       })
       .catch(error => {
-        console.log(error);
+        // console.log(error);
         setisLoading(false);
         setMsg("Error Server");
       })

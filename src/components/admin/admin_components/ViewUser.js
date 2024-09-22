@@ -27,15 +27,14 @@ function Viewusers() {
   `;
 
 
-  const eliminaruser = (data, pass) => {
-    const payload = {data:data, password: pass}
+  const eliminaruser = (data) => {
+    // const payload = {data:data, password: pass}
     axios
-      .post(`http://localhost:3001/deleteuser/${payload.data}`, payload,{
+      .post(`http://localhost:3001/deleteuser/${data}`,{
         headers: { authad: state.user.user },
       })
       .then((res) => {
-        console.log(res);
-        // console.log(res.data);
+        // console.log(res);
       })
       .catch((err) => {
         console.log(err);
@@ -44,10 +43,11 @@ function Viewusers() {
 
   const submit = (data) => {
 
-
-    const pass = prompt("clave");
+    // const pass = prompt("clave");
     const confi = window.confirm("quiere continuar?");
-    if (confi === true){eliminaruser(data, pass)} else{}
+    if (confi === true){eliminaruser(data.email)} else{
+      console.log(data)
+    }
     // confirmAlert({
     //   title: 'Confirm to delete user',
     //   message: 'Are you sure to do this.',
@@ -102,7 +102,7 @@ function Viewusers() {
             <div key={i}>
               <div> {user.name} </div>
               <div> {user.email} </div>
-              <Button onClick={() => submit(user.id)}>
+              <Button onClick={() => submit(user)}>
                 {" "}
                 Delete user{" "}
               </Button>
